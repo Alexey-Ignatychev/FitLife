@@ -31,33 +31,29 @@ while True:
     if not user_weight:
         print("Вес не может быть пустым значением ")
         continue
-    try:
-        weight = float(user_weight)
-        if weight <= 1 or weight >= 366.6:
-            print(
-                "Вес должен быть положительным числом " 
-                "и не превышать 366.6 кг!"
-            )
-            continue
-        break
-    except ValueError:
-            print("Пожалуйста, введите число (66.6 кг)!")
+    
+    weight = float(user_weight)
+    if weight <= 1 or weight >= 366.6:
+        print(
+            "Вес должен быть положительным числом " 
+            "и не превышать 366.6 кг!"
+        )
+        continue
+    break
+
 while True:
     user_height = input("Пожалуйста введите ваш рост (1.66 м) ").strip()
     if not user_height:
         print("Рост не может быть пустым значением ")
         continue
-    try:
-        height = float(user_height)
-        if weight <= 1 or height >= 366.6:
-            print(
-                "Рост должен быть положительным числом " 
-                "и не превышать 3.6 м!"
-            )
-            continue
-        break
-    except ValueError:
-            print("Пожалуйста, введите число (1.66 м)!")
+    height = float(user_height)
+    if weight <= 1 or height >= 366.6:
+        print(
+            "Рост должен быть положительным числом " 
+            "и не превышать 3.6 м!"
+        )
+        continue
+    break
 # 3. Логика расчетов (Функции как "черный ящик": используем арифметику)
 bmi = (weight / (height ** 2))
 okr_bmi = round(bmi, 1)
