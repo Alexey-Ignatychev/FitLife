@@ -4,7 +4,7 @@ while True:
     user_name = str(input("Пожалуйста введите ваше имя ")).strip()
     if user_name == "" or user_name.isspace() or user_name.isdigit():
         print(
-            "Имя не может быть пустым или состоять цифр из пробелов! "
+            "Имя не может быть пустым или состоять цифр из пробелов! ",
             "Пожалуйста, введите корректное имя."
         )
         continue
@@ -18,7 +18,7 @@ while True:
         age = int(user_age)
         if age <= 0 or age >= 123:
             print(
-                "Возраст должен быть положительным числом " 
+                "Возраст должен быть положительным числом ",
                 "и не превышать 123 года!"
             )
             continue
@@ -31,16 +31,14 @@ while True:
     if not user_weight:
         print("Вес не может быть пустым значением ")
         continue
-    
     weight = float(user_weight)
     if weight <= 1 or weight >= 366.6:
         print(
-            "Вес должен быть положительным числом " 
+            "Вес должен быть положительным числом ",
             "и не превышать 366.6 кг!"
         )
         continue
     break
-
 while True:
     user_height = input("Пожалуйста введите ваш рост (1.66 м) ").strip()
     if not user_height:
@@ -49,7 +47,7 @@ while True:
     height = float(user_height)
     if weight <= 1 or height >= 366.6:
         print(
-            "Рост должен быть положительным числом " 
+            "Рост должен быть положительным числом ",
             "и не превышать 3.6 м!"
         )
         continue
@@ -61,15 +59,13 @@ okr_bmi = round(bmi, 1)
 water_ml = weight * 30
 water_l = water_ml / 1000
 okr_water = round(water_l, 1)
+
+
 def get_age_word(age):
-
-
     """
     определение слова возраста
-    Args:
-    приём возраста
-    Returns:   
-    возврат слова возраста   
+    Args: age (int): Возраст пользователя.
+    Returns: str: Слово, соответствующее возрасту («год», «года», «лет»).
     """
     last = age % 10
     last2 = age % 100
@@ -81,6 +77,8 @@ def get_age_word(age):
         return "года"
     else:
         return "лет"
+
+
 age_word = get_age_word(age)
 # 4. Вывод красивого результата
 print(f"Здравствуйте {user_name}")
