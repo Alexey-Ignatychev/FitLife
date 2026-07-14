@@ -3,8 +3,10 @@
 while True:
     user_name = str(input("Пожалуйста введите ваше имя ")).strip()
     if user_name == "" or user_name.isspace() or user_name.isdigit():
-        print("Имя не может быть пустым или состоять цифр из пробелов!"\
-              "Пожалуйста, введите корректное имя.")
+        print(
+            "Имя не может быть пустым или состоять цифр из пробелов! "
+            "Пожалуйста, введите корректное имя."
+        )
         continue
     break
 while True:
@@ -15,8 +17,10 @@ while True:
     try:
         age = int(user_age)
         if age <= 0 or age >= 123:
-            print("Возраст должен быть положительным числом" \
-                  "и не превышать 123 года!")
+            print(
+                "Возраст должен быть положительным числом " 
+                "и не превышать 123 года!"
+            )
             continue
         break
     except ValueError:
@@ -30,7 +34,10 @@ while True:
     try:
         weight = float(user_weight)
         if weight <= 1 or weight >= 366.6:
-            print("Вес должен быть положительным числом и не превышать 366.6 кг!")
+            print(
+                "Вес должен быть положительным числом " 
+                "и не превышать 366.6 кг!"
+            )
             continue
         break
     except ValueError:
@@ -43,7 +50,10 @@ while True:
     try:
         height = float(user_height)
         if weight <= 1 or height >= 366.6:
-            print("Рост должен быть положительным числом и не превышать 3.6 м!")
+            print(
+                "Рост должен быть положительным числом " 
+                "и не превышать 3.6 м!"
+            )
             continue
         break
     except ValueError:
@@ -56,10 +66,17 @@ water_ml = weight * 30
 water_l = water_ml / 1000
 okr_water = round(water_l, 1)
 def get_age_word(age):
+
+
+    """
+    определение слова возраста
+    Args:
+    приём возраста
+    Returns:   
+    возврат слова возраста   
+    """
     last = age % 10
     last2 = age % 100
-
-    
     if last2 in range(11, 20):
         return "лет"
     elif last == 1:
